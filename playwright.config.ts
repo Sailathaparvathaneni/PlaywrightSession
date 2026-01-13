@@ -24,27 +24,45 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
-  use: {
-    /* Base URL to use in actions like `await page.goto('')`. */
-    // baseURL: 'http://localhost:3000',
-
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+ use: {
     trace: 'on-first-retry',
-  },
+    ignoreHTTPSErrors: true,
+    headless: false,
+    navigationTimeout: 60000,
+    launchOptions: {
+      slowMo: 1000,
+    },
+ },
 
-  /* Configure projects for major browsers */
+
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'demoQA',
+      use: { 
+        ...devices['Desktop Chrome'],
+         baseURL: 'https://demoqa.com/'
+       },
+       testMatch: '*.demoqa.spec.mts'
+    },
+    {
+      name: 'AIGHospital',
+      use: { 
+        ...devices['Desktop Chrome'],
+         baseURL: 'https://aighospitals.com'
+       },
+       testMatch: '*.aighospitals.spec.mts'
+      },   
+
+   /* {
+      name: 'demoQA',
+      use: {
+         ...devices['Desktop Firefox'], 
+        baseURL: 'https://demoqa.com/'
+       },
+       testMatch: '*.demoqa.spec.mts'
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-
-    {
+   /* {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },

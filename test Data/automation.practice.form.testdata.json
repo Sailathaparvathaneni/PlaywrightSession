@@ -1,0 +1,30 @@
+[
+    {
+       "testData": "userOne",
+       "firstname": "Playwright",
+       "lastname": "Typescript",
+       "email": "Playwright.typescript@gmail.com",
+       "phonenumber": "9997075670",
+       "year": 2015,
+       "month": "May",
+       "date": 25,
+       "filepath": "C://Users//SAI LATHA//Desktop//Playwright session//playwright.config.ts",
+       "currentaddress": "Vijayawada",
+       "state": "Uttar Pradesh",
+       "city": "Agra"   
+    },
+    {
+       "testData": "userTwo",
+       "firstname": "wright",
+       "lastname": "script",
+       "email": "wright.script@gmail.com",
+       "phonenumber": "9897075676",
+       "year": 2025,
+       "month": "September",
+       "date": 5,
+       "filepath": "C://Users//SAI LATHA//Desktop//Playwright session//playwright.config.ts",
+       "currentaddress": "Hyderabad",
+       "state": "NCR",
+       "city": "Delhi"
+    }
+]
